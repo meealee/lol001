@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 英雄联盟英雄推荐助手</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部导航栏 -->
+        <header>
+            <h1>💕 英雄联盟英雄推荐助手</h1>
+            <button class="settings-btn" id="settingsBtn">⚙️ 设置</button>
+        </header>
+
+        <!-- 设置面板 -->
+        <div class="settings-panel" id="settingsPanel">
+            <div class="settings-content">
+                <h2>⚙️ API 配置</h2>
+                <div class="form-group">
+                    <label for="apiUrl">API 地址</label>
+                    <input type="text" id="apiUrl" placeholder="https://open.bigmodel.cn/api/paas/v4/chat/completions">
+                </div>
+                <div class="form-group">
+                    <label for="apiKey">API 密钥</label>
+                    <input type="password" id="apiKey" placeholder="输入你的 API Key">
+                </div>
+                <div class="form-group">
+                    <label for="modelName">模型名称</label>
+                    <input type="text" id="modelName" placeholder="glm-4.7" value="glm-4.7">
+                </div>
+                <div class="form-group">
+                    <label for="supabaseUrl">Supabase Project URL（已配置）</label>
+                    <input type="text" id="supabaseUrl" placeholder="https://your-project.supabase.co" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="supabaseKey">Supabase Publishable Key（已配置）</label>
+                    <input type="text" id="supabaseKey" placeholder="输入你的 Supabase Key" readonly>
+                </div>
+                <div class="button-group">
+                    <button class="save-btn" id="saveConfigBtn">💾 保存配置</button>
+                    <button class="cancel-btn" id="cancelSettingsBtn">取消</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 聊天界面 -->
+        <div class="chat-page" id="chatPage">
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="avatar">🌸</div>
+                        <div class="message-content">
+                            <p>你好呀～我是你的英雄推荐小助手！💕</p>
+                            <p>告诉我你的游戏风格，我来为你推荐最适合的英雄吧～</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <input type="text" id="userInput" placeholder="输入你的消息..." autocomplete="off">
+                    <button id="sendButton">💌 发送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
